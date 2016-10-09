@@ -1,0 +1,334 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		60B58D411DAA47E300FBA244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58D401DAA47E300FBA244 /* AppDelegate.swift */; };
+		60B58D431DAA47E300FBA244 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58D421DAA47E300FBA244 /* ViewController.swift */; };
+		60B58D461DAA47E300FBA244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60B58D441DAA47E300FBA244 /* Main.storyboard */; };
+		60B58D481DAA47E300FBA244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60B58D471DAA47E300FBA244 /* Assets.xcassets */; };
+		60B58D4B1DAA47E300FBA244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60B58D491DAA47E300FBA244 /* LaunchScreen.storyboard */; };
+		60B58D571DAA712D00FBA244 /* EnvironmentController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58D561DAA712D00FBA244 /* EnvironmentController.swift */; };
+		60B58D591DAA7D5200FBA244 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58D581DAA7D5200FBA244 /* Environment.swift */; };
+		60B58D601DAA93B500FBA244 /* EnvironmentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58D5F1DAA93B500FBA244 /* EnvironmentTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		60B58D3D1DAA47E300FBA244 /* iosColorTemperatureSensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosColorTemperatureSensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		60B58D401DAA47E300FBA244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		60B58D421DAA47E300FBA244 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		60B58D451DAA47E300FBA244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		60B58D471DAA47E300FBA244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		60B58D4A1DAA47E300FBA244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		60B58D4C1DAA47E300FBA244 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60B58D561DAA712D00FBA244 /* EnvironmentController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentController.swift; sourceTree = "<group>"; };
+		60B58D581DAA7D5200FBA244 /* Environment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		60B58D5F1DAA93B500FBA244 /* EnvironmentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentTableViewCell.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		60B58D3A1DAA47E300FBA244 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		60B58D341DAA47E300FBA244 = {
+			isa = PBXGroup;
+			children = (
+				60B58D3F1DAA47E300FBA244 /* iosColorTemperatureSensor */,
+				60B58D3E1DAA47E300FBA244 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		60B58D3E1DAA47E300FBA244 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				60B58D3D1DAA47E300FBA244 /* iosColorTemperatureSensor.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		60B58D3F1DAA47E300FBA244 /* iosColorTemperatureSensor */ = {
+			isa = PBXGroup;
+			children = (
+				60B58D621DAA93F300FBA244 /* ViewController */,
+				60B58D611DAA93E900FBA244 /* Entity */,
+				60B58D5C1DAA935D00FBA244 /* Cell */,
+				60B58D401DAA47E300FBA244 /* AppDelegate.swift */,
+				60B58D441DAA47E300FBA244 /* Main.storyboard */,
+				60B58D471DAA47E300FBA244 /* Assets.xcassets */,
+				60B58D491DAA47E300FBA244 /* LaunchScreen.storyboard */,
+				60B58D4C1DAA47E300FBA244 /* Info.plist */,
+			);
+			path = iosColorTemperatureSensor;
+			sourceTree = "<group>";
+		};
+		60B58D5C1DAA935D00FBA244 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				60B58D5F1DAA93B500FBA244 /* EnvironmentTableViewCell.swift */,
+			);
+			name = Cell;
+			sourceTree = "<group>";
+		};
+		60B58D611DAA93E900FBA244 /* Entity */ = {
+			isa = PBXGroup;
+			children = (
+				60B58D581DAA7D5200FBA244 /* Environment.swift */,
+			);
+			name = Entity;
+			sourceTree = "<group>";
+		};
+		60B58D621DAA93F300FBA244 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				60B58D421DAA47E300FBA244 /* ViewController.swift */,
+				60B58D561DAA712D00FBA244 /* EnvironmentController.swift */,
+			);
+			name = ViewController;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		60B58D3C1DAA47E300FBA244 /* iosColorTemperatureSensor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 60B58D4F1DAA47E300FBA244 /* Build configuration list for PBXNativeTarget "iosColorTemperatureSensor" */;
+			buildPhases = (
+				60B58D391DAA47E300FBA244 /* Sources */,
+				60B58D3A1DAA47E300FBA244 /* Frameworks */,
+				60B58D3B1DAA47E300FBA244 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = iosColorTemperatureSensor;
+			productName = iosColorTemperatureSensor;
+			productReference = 60B58D3D1DAA47E300FBA244 /* iosColorTemperatureSensor.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		60B58D351DAA47E300FBA244 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = FIT5140;
+				TargetAttributes = {
+					60B58D3C1DAA47E300FBA244 = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+				};
+			};
+			buildConfigurationList = 60B58D381DAA47E300FBA244 /* Build configuration list for PBXProject "iosSensors" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 60B58D341DAA47E300FBA244;
+			productRefGroup = 60B58D3E1DAA47E300FBA244 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				60B58D3C1DAA47E300FBA244 /* iosColorTemperatureSensor */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		60B58D3B1DAA47E300FBA244 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60B58D4B1DAA47E300FBA244 /* LaunchScreen.storyboard in Resources */,
+				60B58D481DAA47E300FBA244 /* Assets.xcassets in Resources */,
+				60B58D461DAA47E300FBA244 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		60B58D391DAA47E300FBA244 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				60B58D601DAA93B500FBA244 /* EnvironmentTableViewCell.swift in Sources */,
+				60B58D431DAA47E300FBA244 /* ViewController.swift in Sources */,
+				60B58D591DAA7D5200FBA244 /* Environment.swift in Sources */,
+				60B58D571DAA712D00FBA244 /* EnvironmentController.swift in Sources */,
+				60B58D411DAA47E300FBA244 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		60B58D441DAA47E300FBA244 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60B58D451DAA47E300FBA244 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		60B58D491DAA47E300FBA244 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				60B58D4A1DAA47E300FBA244 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		60B58D4D1DAA47E300FBA244 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		60B58D4E1DAA47E300FBA244 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		60B58D501DAA47E300FBA244 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iosColorTemperatureSensor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FIT5140.iosColorTemperatureSensor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Debug;
+		};
+		60B58D511DAA47E300FBA244 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = iosColorTemperatureSensor/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.FIT5140.iosColorTemperatureSensor;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		60B58D381DAA47E300FBA244 /* Build configuration list for PBXProject "iosSensors" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60B58D4D1DAA47E300FBA244 /* Debug */,
+				60B58D4E1DAA47E300FBA244 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		60B58D4F1DAA47E300FBA244 /* Build configuration list for PBXNativeTarget "iosColorTemperatureSensor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				60B58D501DAA47E300FBA244 /* Debug */,
+				60B58D511DAA47E300FBA244 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 60B58D351DAA47E300FBA244 /* Project object */;
+}

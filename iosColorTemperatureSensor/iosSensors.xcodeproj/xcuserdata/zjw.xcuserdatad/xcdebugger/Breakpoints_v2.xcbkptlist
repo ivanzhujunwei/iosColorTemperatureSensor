@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosColorTemperatureSensor/EnvironmentController.swift"
+            timestampString = "497718620.619241"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "35"
+            endingLineNumber = "35"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "iosColorTemperatureSensor/EnvironmentController.swift"
+            timestampString = "497718625.963355"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "29"
+            endingLineNumber = "29"
+            landmarkName = "viewDidLoad()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iosColorTemperatureSensor.EnvironmentController.viewDidLoad () -&gt; ()"
+                  moduleName = "iosColorTemperatureSensor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zjw/GitHub/iosColorTemperatureSensor/iosColorTemperatureSensor/iosColorTemperatureSensor/EnvironmentController.swift"
+                  timestampString = "497718696.450806"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "29"
+                  endingLineNumber = "29"
+                  offsetFromSymbolStart = "416">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "iosColorTemperatureSensor.EnvironmentController.(viewDidLoad () -&gt; ()).(closure #1)"
+                  moduleName = "iosColorTemperatureSensor"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/zjw/GitHub/iosColorTemperatureSensor/iosColorTemperatureSensor/iosColorTemperatureSensor/EnvironmentController.swift"
+                  timestampString = "497718696.451062"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "33"
+                  endingLineNumber = "33"
+                  offsetFromSymbolStart = "27">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
