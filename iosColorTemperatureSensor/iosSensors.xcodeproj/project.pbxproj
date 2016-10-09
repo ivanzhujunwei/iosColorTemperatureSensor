@@ -44,7 +44,7 @@
 		60B58D341DAA47E300FBA244 = {
 			isa = PBXGroup;
 			children = (
-				60B58D3F1DAA47E300FBA244 /* iosColorTemperatureSensor */,
+				60B58D3F1DAA47E300FBA244 /* iosSensors */,
 				60B58D3E1DAA47E300FBA244 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -57,7 +57,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		60B58D3F1DAA47E300FBA244 /* iosColorTemperatureSensor */ = {
+		60B58D3F1DAA47E300FBA244 /* iosSensors */ = {
 			isa = PBXGroup;
 			children = (
 				60B58D621DAA93F300FBA244 /* ViewController */,
@@ -69,6 +69,7 @@
 				60B58D491DAA47E300FBA244 /* LaunchScreen.storyboard */,
 				60B58D4C1DAA47E300FBA244 /* Info.plist */,
 			);
+			name = iosSensors;
 			path = iosColorTemperatureSensor;
 			sourceTree = "<group>";
 		};
