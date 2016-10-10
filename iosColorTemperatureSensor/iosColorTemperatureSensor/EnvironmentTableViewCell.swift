@@ -9,7 +9,9 @@
 import UIKit
 
 class EnvironmentTableViewCell: UITableViewCell {
-
+    
+    var environment: Environment!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -17,8 +19,11 @@ class EnvironmentTableViewCell: UITableViewCell {
 
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
         // Configure the view for the selected state
+    }
+    
+    func getText() -> String{
+        return environment.description;
     }
 
 }

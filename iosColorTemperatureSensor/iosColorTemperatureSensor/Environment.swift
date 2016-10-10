@@ -12,12 +12,19 @@ class Environment {
     var pressure:NSNumber!
     var altimeter:NSNumber!
     
-//    var description: String{
+    var description: String{
+        let numberFormatter = NSNumberFormatter()
+        numberFormatter.minimumFractionDigits = 1
+        numberFormatter.maximumFractionDigits = 1
+        let tStr = numberFormatter.stringFromNumber(temperature)
+        let pStr = numberFormatter.stringFromNumber(pressure)
+        let aStr = numberFormatter.stringFromNumber(altimeter)
 //        let tempStr  = NSString(format:"%.2f",temperature) as String
 //        let pressureStr  = NSString(format:"%.2f",pressure) as String
 //        let altimeterStr  = NSString(format:"%.2f",altimeter) as String
 //        return "Temp: " + tempStr  + ", Pressure: " + pressureStr + ", Altimeter: " + altimeterStr
-//    }
+        return "Temp: " + tStr!  + ", Pressure: " + pStr! + ", Altimeter: " + aStr!
+    }
     
     // Init function
         init(temperature:NSNumber, pressure:NSNumber, altimeter:NSNumber) {

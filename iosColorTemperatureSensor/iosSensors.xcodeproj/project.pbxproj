@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		600B5C691DAB38360006F467 /* ColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600B5C681DAB38360006F467 /* ColorController.swift */; };
+		600B5C6B1DAB3AB80006F467 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600B5C6A1DAB3AB80006F467 /* Color.swift */; };
+		600B5C6F1DAB44120006F467 /* NUpdateColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600B5C6E1DAB44120006F467 /* NUpdateColorController.swift */; };
+		607B73921DAB019D00169CBC /* NUpdatesEnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607B73911DAB019D00169CBC /* NUpdatesEnController.swift */; };
 		60B58D411DAA47E300FBA244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58D401DAA47E300FBA244 /* AppDelegate.swift */; };
 		60B58D431DAA47E300FBA244 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58D421DAA47E300FBA244 /* ViewController.swift */; };
 		60B58D461DAA47E300FBA244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60B58D441DAA47E300FBA244 /* Main.storyboard */; };
@@ -18,6 +22,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		600B5C681DAB38360006F467 /* ColorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorController.swift; sourceTree = "<group>"; };
+		600B5C6A1DAB3AB80006F467 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		600B5C6E1DAB44120006F467 /* NUpdateColorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUpdateColorController.swift; sourceTree = "<group>"; };
+		607B73911DAB019D00169CBC /* NUpdatesEnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUpdatesEnController.swift; sourceTree = "<group>"; };
 		60B58D3D1DAA47E300FBA244 /* iosColorTemperatureSensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosColorTemperatureSensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B58D401DAA47E300FBA244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60B58D421DAA47E300FBA244 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -85,6 +93,7 @@
 			isa = PBXGroup;
 			children = (
 				60B58D581DAA7D5200FBA244 /* Environment.swift */,
+				600B5C6A1DAB3AB80006F467 /* Color.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -94,6 +103,9 @@
 			children = (
 				60B58D421DAA47E300FBA244 /* ViewController.swift */,
 				60B58D561DAA712D00FBA244 /* EnvironmentController.swift */,
+				607B73911DAB019D00169CBC /* NUpdatesEnController.swift */,
+				600B5C681DAB38360006F467 /* ColorController.swift */,
+				600B5C6E1DAB44120006F467 /* NUpdateColorController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -169,10 +181,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				600B5C6F1DAB44120006F467 /* NUpdateColorController.swift in Sources */,
 				60B58D601DAA93B500FBA244 /* EnvironmentTableViewCell.swift in Sources */,
+				600B5C691DAB38360006F467 /* ColorController.swift in Sources */,
 				60B58D431DAA47E300FBA244 /* ViewController.swift in Sources */,
 				60B58D591DAA7D5200FBA244 /* Environment.swift in Sources */,
 				60B58D571DAA712D00FBA244 /* EnvironmentController.swift in Sources */,
+				600B5C6B1DAB3AB80006F467 /* Color.swift in Sources */,
+				607B73921DAB019D00169CBC /* NUpdatesEnController.swift in Sources */,
 				60B58D411DAA47E300FBA244 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -290,7 +306,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iosColorTemperatureSensor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.FIT5140.iosColorTemperatureSensor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FIT5140.iosSensors;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};
@@ -302,7 +318,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = iosColorTemperatureSensor/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.FIT5140.iosColorTemperatureSensor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.FIT5140.iosSensors;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 			};
