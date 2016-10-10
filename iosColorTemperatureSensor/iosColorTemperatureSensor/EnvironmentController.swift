@@ -12,12 +12,14 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate{
     
     //    var environment: Array<String>!
     var rowsOfEnvironment : Int!
+    var environmentlist : [Environment]!
     // why I can't initialise the value inside the viewDidLoad() method ??????
     //    var tempEnvironment = [String]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         rowsOfEnvironment = 0
+        environmentlist =  [Environment]()
     }
     
     override func didReceiveMemoryWarning() {
@@ -55,39 +57,78 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate{
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("environmentId", forIndexPath: indexPath) as! EnvironmentTableViewCell
-            
-            let url = NSURL(string: "http://192.168.1.18:8088/")!
-            let urlRequest = NSURLRequest(URL: url)
-            let session = NSURLSession.sharedSession()
-            let result = session.dataTaskWithRequest(urlRequest) {
-                (data, response, error) in
-                // Async request, write code inside this handler once data has been processed
-                do {
-                    // If there is only one group of data sent, which is not a NSArray, this would cause exception
-                    let anyObj = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
-                    print("clear sensor data....")
-                    // use anyObj here
-                        let vv = anyObj[indexPath.row]
-                        let temperature = vv["celsiusData"] as! NSNumber
-                        let pressure = vv["pressureData"] as! NSNumber
-                        let altimeter = vv["metreData"] as! NSNumber
-                        let en = Environment ( temperature: temperature, pressure:pressure, altimeter:altimeter)
-                        cell.environment = en
-                        cell.textLabel?.text = cell.getText()
-                    
-                } catch {
-                    print("json error: \(error)")
-                }
+            if self.environmentlist.count > 0 && self.environmentlist.count > indexPath.row{
+                cell.environment = self.environmentlist[indexPath.row]
+                cell.textLabel?.text = cell.getText()
             }
-            result.resume()
+//            let url = NSURL(string: "http://192.168.1.18:8088/")!
+//            let urlRequest = NSURLRequest(URL: url)
+//            let session = NSURLSession.sharedSession()
+//            let result = session.dataTaskWithRequest(urlRequest) {
+//                (data, response, error) in
+//                // Async request, write code inside this handler once data has been processed
+//                do {
+//                    // If there is only one group of data sent, which is not a NSArray, this would cause exception
+//                    let anyObj = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
+//                    // use anyObj here
+//                    let vv = anyObj[indexPath.row]
+//                    let temperature = vv["celsiusData"] as! NSNumber
+//                    let pressure = vv["pressureData"] as! NSNumber
+//                    let altimeter = vv["metreData"] as! NSNumber
+//                    let en = Environment ( temperature: temperature, pressure:pressure, altimeter:altimeter)
+//                    cell.environment = en
+//                    cell.textLabel?.text = cell.getText()
+//                    //                        self.tableView.reloadData()
+//                    dispatch_async(dispatch_get_main_queue(),{
+//                        
+//                        self.tableView.reloadData();
+//                        
+//                    })
+//                    
+//                } catch {
+//                    print("json error: \(error)")
+//                }
+//            }
+//            result.resume()
             return cell
             
         }
     }
     
+    func readSensorData(){
+        let url = NSURL(string: "http://192.168.1.18:8088/")!
+        let urlRequest = NSURLRequest(URL: url)
+        let session = NSURLSession.sharedSession()
+        let result = session.dataTaskWithRequest(urlRequest) {
+            (data, response, error) in
+            // Async request, write code inside this handler once data has been processed
+            do {
+                // If there is only one group of data sent, which is not a NSArray, this would cause exception
+                let anyObj = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
+                // use anyObj here
+//                let vv = anyObj[indexPath.row]
+                for i in 0 ..< self.rowsOfEnvironment {
+                    let vv = anyObj[i]
+                    let temperature = vv["celsiusData"] as! NSNumber
+                    let pressure = vv["pressureData"] as! NSNumber
+                    let altimeter = vv["metreData"] as! NSNumber
+                    let en = Environment ( temperature: temperature, pressure:pressure, altimeter:altimeter )
+                    self.environmentlist.append(en)
+                    self.tableView.reloadData()
+                }
+            } catch {
+                print("json error: \(error)")
+            }
+        }
+        result.resume()
+//        return cell
+    }
+
     // MARK: - Delegate
     func selectNUpdate(nUpdate: Int) {
         rowsOfEnvironment = nUpdate
+        readSensorData()
+        self.tableView.reloadData()
     }
     
     
