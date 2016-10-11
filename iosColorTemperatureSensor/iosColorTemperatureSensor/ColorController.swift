@@ -11,7 +11,6 @@ import UIKit
 class ColorController: UITableViewController, SelectNUpdateColorDelegate {
     
     var displayedColorCount: Int!
-    var nUpdateColorCount: Int!
     var pickedColors: [UIColor]!
     
     @IBAction func pickColor(sender: UIBarButtonItem) {
@@ -19,19 +18,12 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
         readColorSensor()
         self.tableView.reloadData()
     }
-//    var colorPickerCell: ColorPickTableViewCell!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         displayedColorCount = 0
-        nUpdateColorCount = 0
         pickedColors = [UIColor]()
         tableView.tableFooterView = UIView()
-//        let cell = tableView.dequeueReusableCellWithIdentifier("colorPickerId", forIndexPath: indexPath) as! ColorPickTableViewCell
-//        colorPickerCell = self.tableView.cellForRowAtIndexPath(NSIndexPath(forRow: 0, inSection: 0)) as! ColorPickTableViewCell
-        // Add listener to pick a color
-//        colorPickerCell.colorPicker.addTarget(self, action: #selector(ColorController.addColor), forControlEvents: UIControlEvents.TouchUpInside)
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -119,7 +111,6 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
     
     // MARK - Delegate
     func selectNUpdateColor(nUpdate: Int) {
-        nUpdateColorCount = nUpdate
         if nUpdate > pickedColors.count {
             displayedColorCount = pickedColors.count
         }else{

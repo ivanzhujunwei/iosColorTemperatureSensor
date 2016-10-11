@@ -15,7 +15,7 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate{
     var environmentlist : [Environment]!
     // why I can't initialise the value inside the viewDidLoad() method ??????
     //    var tempEnvironment = [String]()
-    
+    var recordsInServer: Int!
     override func viewDidLoad() {
         super.viewDidLoad()
         rowsOfEnvironment = 0
@@ -105,8 +105,11 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate{
             do {
                 // If there is only one group of data sent, which is not a NSArray, this would cause exception
                 let anyObj = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
+                // If server only has 1 record, but the user request 20 records ？
+//                if anyObj.count < self.rowsOfEnvironment{
+//                    self.showAlertWithDismiss("Reminder", message: "Server only has " + "\(anyObj.count)" + " records right now, please request later.")
+//                }
                 // use anyObj here
-//                let vv = anyObj[indexPath.row]
                 for i in 0 ..< self.rowsOfEnvironment {
                     let vv = anyObj[i]
                     let temperature = vv["celsiusData"] as! NSNumber
@@ -179,6 +182,13 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate{
             let nUpdateController = segue.destinationViewController as! NUpdatesEnController
             nUpdateController.selectNUpdate = self
         }
+    }
+    
+    func showAlertWithDismiss(title:String, message:String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let alertDismissAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+        alertController.addAction(alertDismissAction)
+        self.presentViewController(alertController, animated: true, completion: nil)
     }
     
     

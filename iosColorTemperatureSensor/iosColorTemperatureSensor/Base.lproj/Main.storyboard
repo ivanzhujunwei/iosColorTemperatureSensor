@@ -187,7 +187,7 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="0Ex-aV-cdf">
-                        <barButtonItem key="rightBarButtonItem" title="Pick color" style="plain" id="eW6-BE-NgT">
+                        <barButtonItem key="rightBarButtonItem" title="Pick color" style="done" id="eW6-BE-NgT">
                             <connections>
                                 <action selector="pickColor:" destination="W3Q-KN-9jL" id="ERM-BR-EIp"/>
                             </connections>
