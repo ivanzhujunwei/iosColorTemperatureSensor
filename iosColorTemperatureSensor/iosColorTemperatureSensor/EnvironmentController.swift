@@ -103,6 +103,11 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate{
             (data, response, error) in
             // Async request, write code inside this handler once data has been processed
             do {
+                // if no data is being received
+                if data == nil {
+                    self.showAlertWithDismiss("Error", message: "Server connection error!")
+                    return
+                }
                 // If there is only one group of data sent, which is not a NSArray, this would cause exception
                 let anyObj = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
                 // If server only has 1 record, but the user request 20 records ？
