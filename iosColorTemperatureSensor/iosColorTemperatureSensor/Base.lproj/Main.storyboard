@@ -71,6 +71,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="GOn-4I-0po" kind="show" identifier="enviroDetailSeg" id="ZJg-S8-bCZ"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -79,12 +82,60 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="2So-9m-as3">
-                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="wO0-nO-VX7"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="wO0-nO-VX7">
+                            <connections>
+                                <action selector="refreshTableView:" destination="96t-ca-zB3" id="B0Y-Bl-TEW"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ZxR-Sv-raW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1052" y="-143"/>
+        </scene>
+        <!--Environment Color Controller-->
+        <scene sceneID="2PH-at-N3W">
+            <objects>
+                <tableViewController id="GOn-4I-0po" customClass="EnvironmentColorController" customModule="iosColorTemperatureSensor" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="W05-17-S1j">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="viewEnvironmentId" id="myG-R0-LOm">
+                                <rect key="frame" x="0.0" y="92" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="myG-R0-LOm" id="8sj-AL-T2E">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoId" id="9ha-NR-CvT">
+                                <rect key="frame" x="0.0" y="136" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9ha-NR-CvT" id="yB6-s1-yua">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="colorInfoId" id="mzs-e5-eag">
+                                <rect key="frame" x="0.0" y="180" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mzs-e5-eag" id="R6S-Vj-dt0">
+                                    <frame key="frameInset" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="GOn-4I-0po" id="PJQ-xj-kio"/>
+                            <outlet property="delegate" destination="GOn-4I-0po" id="0N0-Zw-g7S"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="s6C-fw-yEm" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2622" y="-121"/>
         </scene>
         <!--Updates En Controller-->
         <scene sceneID="nCO-MZ-ZjE">
@@ -112,7 +163,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="956-8O-HUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1961" y="-142"/>
+            <point key="canvasLocation" x="1934" y="-589"/>
         </scene>
         <!--Environmnet-->
         <scene sceneID="IWU-Tz-gg3">

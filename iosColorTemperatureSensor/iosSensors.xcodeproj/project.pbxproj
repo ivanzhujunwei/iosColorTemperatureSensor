@@ -12,6 +12,7 @@
 		600B5C6F1DAB44120006F467 /* NUpdateColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600B5C6E1DAB44120006F467 /* NUpdateColorController.swift */; };
 		603353DA1DAB74FA0016B142 /* ColorPickTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603353D91DAB74FA0016B142 /* ColorPickTableViewCell.swift */; };
 		607B73921DAB019D00169CBC /* NUpdatesEnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607B73911DAB019D00169CBC /* NUpdatesEnController.swift */; };
+		60A79F371DAE5E5700641E1F /* EnvironmentColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A79F361DAE5E5700641E1F /* EnvironmentColorController.swift */; };
 		60B58D411DAA47E300FBA244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58D401DAA47E300FBA244 /* AppDelegate.swift */; };
 		60B58D431DAA47E300FBA244 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58D421DAA47E300FBA244 /* ViewController.swift */; };
 		60B58D461DAA47E300FBA244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60B58D441DAA47E300FBA244 /* Main.storyboard */; };
@@ -28,6 +29,7 @@
 		600B5C6E1DAB44120006F467 /* NUpdateColorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUpdateColorController.swift; sourceTree = "<group>"; };
 		603353D91DAB74FA0016B142 /* ColorPickTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickTableViewCell.swift; sourceTree = "<group>"; };
 		607B73911DAB019D00169CBC /* NUpdatesEnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUpdatesEnController.swift; sourceTree = "<group>"; };
+		60A79F361DAE5E5700641E1F /* EnvironmentColorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentColorController.swift; sourceTree = "<group>"; };
 		60B58D3D1DAA47E300FBA244 /* iosColorTemperatureSensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosColorTemperatureSensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B58D401DAA47E300FBA244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		60B58D421DAA47E300FBA244 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				607B73911DAB019D00169CBC /* NUpdatesEnController.swift */,
 				600B5C681DAB38360006F467 /* ColorController.swift */,
 				600B5C6E1DAB44120006F467 /* NUpdateColorController.swift */,
+				60A79F361DAE5E5700641E1F /* EnvironmentColorController.swift */,
 			);
 			name = ViewController;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				60B58D571DAA712D00FBA244 /* EnvironmentController.swift in Sources */,
 				600B5C6B1DAB3AB80006F467 /* Color.swift in Sources */,
 				607B73921DAB019D00169CBC /* NUpdatesEnController.swift in Sources */,
+				60A79F371DAE5E5700641E1F /* EnvironmentColorController.swift in Sources */,
 				60B58D411DAA47E300FBA244 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -257,7 +261,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -297,7 +301,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";

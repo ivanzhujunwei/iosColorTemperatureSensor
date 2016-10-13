@@ -8,25 +8,28 @@
 
 import UIKit
 
-class EnvironmentController: UITableViewController, SelectNUpdateDelegate{
+class EnvironmentController: UITableViewController, SelectNUpdateDelegate, setColorForEnvironmentDelegate{
     
     //    var environment: Array<String>!
     var rowsOfEnvironment : Int!
     var environmentlist : [Environment]!
+    // the picked colors by user
+    var pickedColors: [UIColor]!
     // why I can't initialise the value inside the viewDidLoad() method ??????
     //    var tempEnvironment = [String]()
     var recordsInServer: Int!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         rowsOfEnvironment = 0
         environmentlist =  [Environment]()
+        pickedColors = [UIColor]()
     }
     
-     // Click the refresh button, reload the tableView data
-    @IBAction func refreshView(sender: AnyObject) {
+    // Click the refresh button, reload the tableView data
+    @IBAction func refreshTableView(sender: AnyObject) {
         self.tableView.reloadData()
     }
-    
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -41,11 +44,9 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate{
     }
     
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         if section == 0{
             return 1;
         }else {
-            //            print("getEnvironmentFromSensor().count..." + "\(rowsInSection2)")
             return rowsOfEnvironment
         }
     }
@@ -54,55 +55,31 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate{
         super.viewWillAppear(animated)
         // reload data
         self.tableView.reloadData()
+        // set the pickedColor the same as the color controller
+        let colorTab = self.tabBarController?.viewControllers![1].childViewControllers[0] as! ColorController
+        pickedColors = colorTab.pickedColors
     }
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("updateEnvironmnetId", forIndexPath: indexPath)
-            cell.textLabel?.text = "Current value"
+            cell.textLabel?.text = "Please choose the number to show records"
             return cell
         } else {
             let cell = tableView.dequeueReusableCellWithIdentifier("environmentId", forIndexPath: indexPath) as! EnvironmentTableViewCell
             if self.environmentlist.count > 0 && self.environmentlist.count > indexPath.row{
                 cell.environment = self.environmentlist[indexPath.row]
                 cell.textLabel?.text = cell.getText()
+                cell.backgroundColor = self.environmentlist[indexPath.row].color
             }
-//            let url = NSURL(string: "http://192.168.1.18:8088/")!
-//            let urlRequest = NSURLRequest(URL: url)
-//            let session = NSURLSession.sharedSession()
-//            let result = session.dataTaskWithRequest(urlRequest) {
-//                (data, response, error) in
-//                // Async request, write code inside this handler once data has been processed
-//                do {
-//                    // If there is only one group of data sent, which is not a NSArray, this would cause exception
-//                    let anyObj = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
-//                    // use anyObj here
-//                    let vv = anyObj[indexPath.row]
-//                    let temperature = vv["celsiusData"] as! NSNumber
-//                    let pressure = vv["pressureData"] as! NSNumber
-//                    let altimeter = vv["metreData"] as! NSNumber
-//                    let en = Environment ( temperature: temperature, pressure:pressure, altimeter:altimeter)
-//                    cell.environment = en
-//                    cell.textLabel?.text = cell.getText()
-//                    //                        self.tableView.reloadData()
-//                    dispatch_async(dispatch_get_main_queue(),{
-//                        
-//                        self.tableView.reloadData();
-//                        
-//                    })
-//                    
-//                } catch {
-//                    print("json error: \(error)")
-//                }
-//            }
-//            result.resume()
             return cell
             
         }
     }
     
     func readSensorData(){
-        let url = NSURL(string: "http://192.168.1.18:8088/")!
+        let url = NSURL(string: "http://172.20.10.8:8088/")!
+//        let url = NSURL(string: "http://192.168.1.18:8088/")!
         let urlRequest = NSURLRequest(URL: url)
         let session = NSURLSession.sharedSession()
         let result = session.dataTaskWithRequest(urlRequest) {
@@ -117,16 +94,23 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate{
                 // If there is only one group of data sent, which is not a NSArray, this would cause exception
                 let anyObj = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
                 // If server only has 1 record, but the user request 20 records ？
-//                if anyObj.count < self.rowsOfEnvironment{
-//                    self.showAlertWithDismiss("Reminder", message: "Server only has " + "\(anyObj.count)" + " records right now, please request later.")
-//                }
+                //                if anyObj.count < self.rowsOfEnvironment{
+                //                    self.showAlertWithDismiss("Reminder", message: "Server only has " + "\(anyObj.count)" + " records right now, please request later.")
+                //                }
+                // If the number requested is bigger than the number of data server stored, should show the information
+                if self.rowsOfEnvironment > anyObj.count{
+                    self.showAlertWithDismiss("Reminder", message: "Sorry, server only has \(anyObj.count) records of data which will be shown.")
+                    self.rowsOfEnvironment = anyObj.count
+                }
+                // remove the sensor data frist
+                self.environmentlist.removeAll()
                 // use anyObj here
                 for i in 0 ..< self.rowsOfEnvironment {
-                    let vv = anyObj[i]
+                    let vv = anyObj[anyObj.count - 1 - i]
                     let temperature = vv["celsiusData"] as! NSNumber
                     let pressure = vv["pressureData"] as! NSNumber
                     let altimeter = vv["metreData"] as! NSNumber
-                    let en = Environment ( temperature: temperature, pressure:pressure, altimeter:altimeter )
+                    let en = Environment ( temperature: temperature, pressure:pressure, altimeter:altimeter, color: UIColor.whiteColor() )
                     self.environmentlist.append(en)
                     self.tableView.reloadData()
                 }
@@ -135,9 +119,9 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate{
             }
         }
         result.resume()
-//        return cell
+        //        return cell
     }
-
+    
     // MARK: - Delegate
     func selectNUpdate(nUpdate: Int) {
         rowsOfEnvironment = nUpdate
@@ -145,44 +129,9 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate{
         self.tableView.reloadData()
     }
     
-    
-    /*
-     // Override to support conditional editing of the table view.
-     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the specified item to be editable.
-     return true
-     }
-     */
-    
-    /*
-     // Override to support editing the table view.
-     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-     if editingStyle == .Delete {
-     // Delete the row from the data source
-     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-     } else if editingStyle == .Insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
-    
-    /*
-     // Override to support rearranging the table view.
-     override func tableView(tableView: UITableView, moveRowAtIndexPath fromIndexPath: NSIndexPath, toIndexPath: NSIndexPath) {
-     
-     }
-     */
-    
-    /*
-     // Override to support conditional rearranging of the table view.
-     override func tableView(tableView: UITableView, canMoveRowAtIndexPath indexPath: NSIndexPath) -> Bool {
-     // Return false if you do not want the item to be re-orderable.
-     return true
-     }
-     */
-    
-    
-    
+    func setColorDelegate(color: UIColor) {
+//        
+    }
     // MARK: - Navigation
     
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -192,6 +141,13 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate{
         if segue.identifier == "selectNUpdateSeg" {
             let nUpdateController = segue.destinationViewController as! NUpdatesEnController
             nUpdateController.selectNUpdate = self
+        }else if segue.identifier == "enviroDetailSeg" {
+            let showEnvironmnetView = segue.destinationViewController as! EnvironmentColorController
+            // Get selected row index
+            let indexPath = tableView.indexPathForSelectedRow
+            showEnvironmnetView.environment = self.environmentlist![indexPath!.row]
+            showEnvironmnetView.pickedColors = self.pickedColors
+            showEnvironmnetView.setColor = self
         }
     }
     

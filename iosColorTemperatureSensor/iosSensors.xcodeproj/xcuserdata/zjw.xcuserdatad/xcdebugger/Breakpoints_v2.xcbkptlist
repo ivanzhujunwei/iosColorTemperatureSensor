@@ -9,13 +9,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iosColorTemperatureSensor/ColorController.swift"
-            timestampString = "497800586.368199"
+            filePath = "iosColorTemperatureSensor/EnvironmentColorController.swift"
+            timestampString = "497975856.682392"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "69"
-            endingLineNumber = "69"
-            landmarkName = "tableView(tableView:cellForRowAtIndexPath:)"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "tableView(tableView:numberOfRowsInSection:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -25,24 +25,8 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iosColorTemperatureSensor/ColorController.swift"
-            timestampString = "497800586.368199"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
-            landmarkName = "readColorSensor()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iosColorTemperatureSensor/ColorController.swift"
-            timestampString = "497800586.368199"
+            filePath = "iosColorTemperatureSensor/EnvironmentController.swift"
+            timestampString = "497973849.020959"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "55"
@@ -57,93 +41,13 @@
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "iosColorTemperatureSensor/ColorController.swift"
-            timestampString = "497800586.368199"
+            filePath = "iosColorTemperatureSensor/EnvironmentColorController.swift"
+            timestampString = "497975894.401917"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "113"
-            endingLineNumber = "113"
-            landmarkName = "selectNUpdateColor(nUpdate:)"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "iosColorTemperatureSensor.ColorController.selectNUpdateColor (Swift.Int) -&gt; ()"
-                  moduleName = "iosColorTemperatureSensor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zjw/GitHub/iosColorTemperatureSensor/iosColorTemperatureSensor/iosColorTemperatureSensor/ColorController.swift"
-                  timestampString = "497800800.647718"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "114"
-                  endingLineNumber = "114"
-                  offsetFromSymbolStart = "32">
-               </Location>
-               <Location
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "protocol witness for iosColorTemperatureSensor.SelectNUpdateColorDelegate.selectNUpdateColor (Swift.Int) -&gt; () in conformance iosColorTemperatureSensor.ColorController : iosColorTemperatureSensor.SelectNUpdateColorDelegate in iosColorTemperatureSensor"
-                  moduleName = "iosColorTemperatureSensor"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/zjw/GitHub/iosColorTemperatureSensor/iosColorTemperatureSensor/iosColorTemperatureSensor/ColorController.swift"
-                  timestampString = "497800800.648929"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "113"
-                  endingLineNumber = "113"
-                  offsetFromSymbolStart = "12">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iosColorTemperatureSensor/EnvironmentController.swift"
-            timestampString = "497800705.772301"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "60"
-            endingLineNumber = "60"
-            landmarkName = "tableView(tableView:cellForRowAtIndexPath:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iosColorTemperatureSensor/EnvironmentController.swift"
-            timestampString = "497800779.190923"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "132"
-            endingLineNumber = "132"
-            landmarkName = "selectNUpdate(nUpdate:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "iosColorTemperatureSensor/EnvironmentController.swift"
-            timestampString = "497800790.447389"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
-            landmarkName = "readSensorData()"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "tableView(tableView:didSelectRowAtIndexPath:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

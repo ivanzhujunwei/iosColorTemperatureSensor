@@ -7,10 +7,12 @@
 //
 
 import Foundation
+import UIKit
 class Environment {
     var temperature:NSNumber!
     var pressure:NSNumber!
     var altimeter:NSNumber!
+    var color:UIColor
     
     var description: String{
         let numberFormatter = NSNumberFormatter()
@@ -23,14 +25,16 @@ class Environment {
 //        let pressureStr  = NSString(format:"%.2f",pressure) as String
 //        let altimeterStr  = NSString(format:"%.2f",altimeter) as String
 //        return "Temp: " + tempStr  + ", Pressure: " + pressureStr + ", Altimeter: " + altimeterStr
-        return "Temp: " + tStr!  + ", Pressure: " + pStr! + ", Altimeter: " + aStr!
+//        return "Temp: " + tStr!  + ", Pressure: " + pStr! + ", Altimeter: " + aStr!
+        return "T: " + tStr!  + ",  P: " + pStr! + ",  A: " + aStr!
     }
     
     // Init function
-        init(temperature:NSNumber, pressure:NSNumber, altimeter:NSNumber) {
+    init(temperature:NSNumber, pressure:NSNumber, altimeter:NSNumber, color: UIColor) {
             self.temperature = temperature
             self.pressure = pressure
             self.altimeter = altimeter
+            self.color = color
         }
     
     //        init(){}

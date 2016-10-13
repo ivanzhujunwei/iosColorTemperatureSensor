@@ -12,9 +12,17 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
     
     var displayedColorCount: Int!
     var pickedColors: [UIColor]!
+    //
+    //    var control: Int = 0
     
     @IBAction func pickColor(sender: UIBarButtonItem) {
         displayedColorCount = displayedColorCount + 1
+        //
+        //        if (control == 0)
+        //        {
+        //            readColorSensorFirst()
+        //            control = 1
+        //        }
         readColorSensor()
         self.tableView.reloadData()
     }
@@ -61,7 +69,7 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
         // Configure the cell...
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("colorSelectId", forIndexPath: indexPath)
-            cell.textLabel?.text = "Colors"
+            cell.textLabel?.text = "Please choose the number to show colors."
             return cell;
         }else if indexPath.section == 1{
             let cell = tableView.dequeueReusableCellWithIdentifier("colorDisplayId", forIndexPath: indexPath)
@@ -74,40 +82,74 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
     }
     
     func readColorSensor(){
-        let url = NSURL(string: "http://192.168.1.18:8089/")!
+        let url = NSURL(string: "http://172.20.10.8:8089/")!
+//        let url = NSURL(string: "http://192.168.1.18:8089/")!
         let urlRequest = NSURLRequest(URL: url)
         let session = NSURLSession.sharedSession()
         let result = session.dataTaskWithRequest(urlRequest) {
             (data, response, error) in
             // Async request, write code inside this handler once data has been processed
             do {
+                // if no data is being received
+                if data == nil {
+                    self.showAlertWithDismiss("Error", message: "Server connection error!")
+                    return
+                }
                 // If there is only one group of data sent, which is not a NSArray, this would cause exception
                 let anyObj = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
                 // use anyObj here
-//                let ff = anyObj.reverse()
-//                for index in 0 ..< self.displayedColorCount {
-                    let newObj = anyObj.reverse()
-                    let vv = newObj[0]
-                    let green = vv["green"] as! Double
-                    let red = vv["red"] as! Double
-                    let blue = vv["blue"] as! Double
-                    let c = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-                    print("展示多少条数据。。。"+"\(self.displayedColorCount)")
-                    print("red.."+"\(red)")
-                    print("green"+"\(green)")
-                    print("blue"+"\(blue)")
-                    self.pickedColors.append(c)
-//                }
-//                cell.textLabel?.text = "coloring.."
-//                cell.textLabel?.backgroundColor = c
+                //let newObj = anyObj.reverse()
+                let sensorData = anyObj[anyObj.count-1]
+                if sensorData.count == 1{
+//                    let errorResponse = sensorData["err"]
+                    self.showAlertWithDismiss("Error", message: "Sorry, failed to read from device.")
+//                    self.showAlertWithDismiss("Error", message: errorResponse)
+                    return
+                }
+                let green = sensorData["green"] as! Double
+                let red = sensorData["red"] as! Double
+                let blue = sensorData["blue"] as! Double
+                let c = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
+                //                    print("展示多少条数据。。。"+"\(self.displayedColorCount)")
+                //                    print("red.."+"\(red)")
+                //                    print("green"+"\(green)")
+                //                    print("blue"+"\(blue)")
+                self.pickedColors.append(c)
                 self.tableView.reloadData()
             } catch {
                 print("json error: \(error)")
             }
         }
         result.resume()
-    
+        
     }
+    
+    ///////////////////////
+    //    func readColorSensorFirst(){
+    //        let url = NSURL(string: "http://172.20.10.8:8089/")!
+    //        let urlRequest = NSURLRequest(URL: url)
+    //        let session = NSURLSession.sharedSession()
+    //        let result = session.dataTaskWithRequest(urlRequest) {
+    //            (data, response, error) in
+    //            // Async request, write code inside this handler once data has been processed
+    //            do {
+    // If there is only one group of data sent, which is not a NSArray, this would cause exception
+    //                let anyObj = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableContainers) as! NSArray
+    // use anyObj here
+    //let newObj = anyObj.reverse()
+    //                let vv = anyObj[anyObj.count-1]
+    //                let green = vv["green"] as! Double
+    //                let red = vv["red"] as! Double
+    //                let blue = vv["blue"] as! Double
+    //                self.tableView.reloadData()
+    //            } catch {
+    //                print("json error: \(error)")
+    //            }
+    //        }
+    //        result.resume()
+    //
+    //    }
+    
     
     // MARK - Delegate
     func selectNUpdateColor(nUpdate: Int) {
@@ -117,9 +159,14 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
             displayedColorCount = nUpdate
         }
         if nUpdate > pickedColors.count {
-            showAlertWithDismiss("Reminder", message: "You only picked "+"\(pickedColors.count)"+" colors which would be showed")
+            var responseMsg = ""
+            if pickedColors.count == 0 {
+                responseMsg = "Hi, you haven't picked any color yet, please pick one first."
+            }else {
+                responseMsg = "You only picked "+"\(pickedColors.count)"+" colors which will be shown."
+            }
+            showAlertWithDismiss("Reminder", message: responseMsg)
         }
-//        readColorSensor()
     }
     /*
      // Override to support conditional editing of the table view.
@@ -129,17 +176,20 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
      }
      */
     
-    /*
-     // Override to support editing the table view.
-     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
-     if editingStyle == .Delete {
-     // Delete the row from the data source
-     tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
-     } else if editingStyle == .Insert {
-     // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-     }
-     }
-     */
+    
+    // Override to support editing the table view.
+    override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
+        if indexPath.section == 1 {
+            if editingStyle == .Delete {
+                // Delete the color from the color Array
+                pickedColors.removeAtIndex(indexPath.row)
+                // Delete the row from the data source
+                tableView.deleteRowsAtIndexPaths([indexPath], withRowAnimation: .Fade)
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     
     /*
      // Override to support rearranging the table view.
@@ -156,17 +206,17 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
      }
      */
     
-     // MARK: - Navigation
-     
-     // In a storyboard-based application, you will often want to do a little preparation before navigation
-     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-     // Get the new view controller using segue.destinationViewController.
-     // Pass the selected object to the new view controller.
+    // MARK: - Navigation
+    
+    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
         if segue.identifier == "selectColorCountSeg" {
             let colorView = segue.destinationViewController as! NUpdateColorController
             colorView.selectNUpdate = self
         }
-     }
+    }
     
     func showAlertWithDismiss(title:String, message:String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
