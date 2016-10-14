@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6006682B1DAF8FF800D72E8F /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6006682A1DAF8FF800D72E8F /* WeatherTableViewCell.swift */; };
 		600B5C691DAB38360006F467 /* ColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600B5C681DAB38360006F467 /* ColorController.swift */; };
 		600B5C6B1DAB3AB80006F467 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600B5C6A1DAB3AB80006F467 /* Color.swift */; };
 		600B5C6F1DAB44120006F467 /* NUpdateColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600B5C6E1DAB44120006F467 /* NUpdateColorController.swift */; };
@@ -24,6 +25,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6006682A1DAF8FF800D72E8F /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		600B5C681DAB38360006F467 /* ColorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorController.swift; sourceTree = "<group>"; };
 		600B5C6A1DAB3AB80006F467 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		600B5C6E1DAB44120006F467 /* NUpdateColorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUpdateColorController.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 			children = (
 				60B58D5F1DAA93B500FBA244 /* EnvironmentTableViewCell.swift */,
 				603353D91DAB74FA0016B142 /* ColorPickTableViewCell.swift */,
+				6006682A1DAF8FF800D72E8F /* WeatherTableViewCell.swift */,
 			);
 			name = Cell;
 			sourceTree = "<group>";
@@ -188,6 +191,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6006682B1DAF8FF800D72E8F /* WeatherTableViewCell.swift in Sources */,
 				600B5C6F1DAB44120006F467 /* NUpdateColorController.swift in Sources */,
 				60B58D601DAA93B500FBA244 /* EnvironmentTableViewCell.swift in Sources */,
 				600B5C691DAB38360006F467 /* ColorController.swift in Sources */,

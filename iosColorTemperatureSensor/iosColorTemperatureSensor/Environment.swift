@@ -21,14 +21,17 @@ class Environment {
         let tStr = numberFormatter.stringFromNumber(temperature)
         let pStr = numberFormatter.stringFromNumber(pressure)
         let aStr = numberFormatter.stringFromNumber(altimeter)
-//        let tempStr  = NSString(format:"%.2f",temperature) as String
-//        let pressureStr  = NSString(format:"%.2f",pressure) as String
-//        let altimeterStr  = NSString(format:"%.2f",altimeter) as String
-//        return "Temp: " + tempStr  + ", Pressure: " + pressureStr + ", Altimeter: " + altimeterStr
-//        return "Temp: " + tStr!  + ", Pressure: " + pStr! + ", Altimeter: " + aStr!
         return "T: " + tStr!  + ",  P: " + pStr! + ",  A: " + aStr!
     }
     
+    var subInfo: String{
+        let numberFormatter = NSNumberFormatter()
+        numberFormatter.minimumFractionDigits = 1
+        numberFormatter.maximumFractionDigits = 1
+        let pStr = numberFormatter.stringFromNumber(pressure)
+        let aStr = numberFormatter.stringFromNumber(altimeter)
+        return "Pressure: " + pStr! + ",  Altimeter: " + aStr!
+    }
     // Init function
     init(temperature:NSNumber, pressure:NSNumber, altimeter:NSNumber, color: UIColor) {
             self.temperature = temperature
