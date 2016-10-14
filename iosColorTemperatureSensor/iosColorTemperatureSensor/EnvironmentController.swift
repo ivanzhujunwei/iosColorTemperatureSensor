@@ -8,17 +8,19 @@
 
 import UIKit
 
+// This is the initial view of this project. It will display the caught information (altimeter,
+// temperature and pressure) from the sensor and display them to the screen (the number of
+// records to be displayed is defined in another view after clicked the first section of this view)
 class EnvironmentController: UITableViewController, SelectNUpdateDelegate, setColorForEnvironmentDelegate{
     
-    //    var environment: Array<String>!
     var rowsOfEnvironment : Int!
     var environmentlist : [Environment]!
     // the picked colors by user
     var pickedColors: [UIColor]!
     // why I can't initialise the value inside the viewDidLoad() method ??????
-    //    var tempEnvironment = [String]()
     var recordsInServer: Int!
     
+    // Call the first time this view is loaded.
     override func viewDidLoad() {
         super.viewDidLoad()
         rowsOfEnvironment = 0
@@ -36,13 +38,14 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate, setCo
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
     
+    // set the number of sections for this table view
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 2
     }
     
+    // set the number of rows for each section
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0{
             return 1;
@@ -51,6 +54,9 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate, setCo
         }
     }
     
+    // This function is called everytime the table is presented. It will refresh the table
+    // and reload all the data. (each time this page is loaded, the caught colours from the
+    // color sensor would be passed to this view and be further made use of.
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         // reload data
@@ -60,6 +66,10 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate, setCo
         pickedColors = colorTab.pickedColors
     }
     
+    // Define the outlook of the cells for this view. The first section is supposed to show a
+    // message, and if clicked, another table view will be presented. The second section is
+    // supposed to show all the environment information caught by the sensor, and the number of
+    // which is defined in another view
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("updateEnvironmnetId", forIndexPath: indexPath)
@@ -77,9 +87,14 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate, setCo
         }
     }
     
+    // This function is used to use HTTP protocol to build connection to the environment sensor
+    // The IP address and the port number is defined in the server. Data is transferred in JSON
+    // format and the variable 'data' is used to store that JSON content and be further deployed
+    // to receive the actual data. Eventually, the fetched data would be stored into the field
+    // attribute of this view
     func readSensorData(){
         let url = NSURL(string: "http://172.20.10.8:8088/")!
-//        let url = NSURL(string: "http://192.168.1.18:8088/")!
+        //        let url = NSURL(string: "http://192.168.1.18:8088/")!
         let urlRequest = NSURLRequest(URL: url)
         let session = NSURLSession.sharedSession()
         let result = session.dataTaskWithRequest(urlRequest) {
@@ -123,6 +138,8 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate, setCo
     }
     
     // MARK: - Delegate
+    // The delegate used to receive the configuration of how many rows to show defined in another
+    // view.
     func selectNUpdate(nUpdate: Int) {
         rowsOfEnvironment = nUpdate
         readSensorData()
@@ -130,11 +147,12 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate, setCo
     }
     
     func setColorDelegate(color: UIColor) {
-//        
     }
-    // MARK: - Navigation
     
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
+    // In a storyboard-based application, you will often want to do a little preparation before
+    // navigation. Therefore, we use the prepareforsegue function here to process different
+    // functions according to the different segue names. (sending the information contained
+    // in the selected row)
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
@@ -151,6 +169,8 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate, setCo
         }
     }
     
+    // Function to produce an alert for the user. It will be called when needed and the
+    // message to be displayed will be given to this function
     func showAlertWithDismiss(title:String, message:String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .Alert)
         let alertDismissAction = UIAlertAction(title: "OK", style: .Default, handler: nil)

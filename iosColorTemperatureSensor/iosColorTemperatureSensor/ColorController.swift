@@ -8,6 +8,9 @@
 
 import UIKit
 
+// This is the main view for the color sensor. It will display the caught information (RGB
+// information) from the sensor and display the actual color to the screen (the number of
+// records to be displayed is defined in another view after clicked the first section of this view)
 class ColorController: UITableViewController, SelectNUpdateColorDelegate {
     
     var displayedColorCount: Int!
@@ -15,6 +18,7 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
     //
     //    var control: Int = 0
     
+    // When the button is pressed, the data from the sensor would be retrieved.
     @IBAction func pickColor(sender: UIBarButtonItem) {
         displayedColorCount = displayedColorCount + 1
         //
@@ -27,6 +31,7 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
         self.tableView.reloadData()
     }
     
+    // This function is called the first time this view is loaded.
     override func viewDidLoad() {
         super.viewDidLoad()
         displayedColorCount = 0
@@ -39,13 +44,13 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
-    
+    // set the number of sections for this table view
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 2
     }
     
+    // set the number of rows for each section
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
         if section == 0 {
@@ -59,12 +64,16 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
         }
     }
     
+    // This function is called everytime the table is presented.
     override func viewWillAppear(animated: Bool) {
         super.viewWillAppear(animated)
         self.tableView.reloadData()
         
     }
     
+    // Define the outlook of the cells for this view. The first section is used to display a
+    // prompt messaged and later ba pressed by the user. The second section is used to display
+    // the captured colour from the color sensor.
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         // Configure the cell...
         if indexPath.section == 0 {
@@ -81,9 +90,14 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
         }
     }
     
+    // This function is used to use HTTP protocol to build connection to the color sensor
+    // The IP address and the port number is defined in the server. Data is transferred in JSON
+    // format and the variable 'data' is used to store that JSON content and be further deployed
+    // to receive the actual data. Eventually, the fetched data would be stored into the field
+    // attribute of this view
     func readColorSensor(){
         let url = NSURL(string: "http://172.20.10.8:8089/")!
-//        let url = NSURL(string: "http://192.168.1.18:8089/")!
+        //        let url = NSURL(string: "http://192.168.1.18:8089/")!
         let urlRequest = NSURLRequest(URL: url)
         let session = NSURLSession.sharedSession()
         let result = session.dataTaskWithRequest(urlRequest) {
@@ -101,9 +115,9 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
                 //let newObj = anyObj.reverse()
                 let sensorData = anyObj[anyObj.count-1]
                 if sensorData.count == 1{
-//                    let errorResponse = sensorData["err"]
+                    //                    let errorResponse = sensorData["err"]
                     self.showAlertWithDismiss("Error", message: "Sorry, failed to read from device.")
-//                    self.showAlertWithDismiss("Error", message: errorResponse)
+                    //                    self.showAlertWithDismiss("Error", message: errorResponse)
                     return
                 }
                 let green = sensorData["green"] as! Double
@@ -151,7 +165,8 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
     //    }
     
     
-    // MARK - Delegate
+    // function used to prevent the user from selecting to show more colors than the actual
+    // stored colour number.
     func selectNUpdateColor(nUpdate: Int) {
         if nUpdate > pickedColors.count {
             displayedColorCount = pickedColors.count
@@ -177,7 +192,7 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
      */
     
     
-    // Override to support editing the table view.
+    // function used to provide the delete function to delete the selected color
     override func tableView(tableView: UITableView, commitEditingStyle editingStyle: UITableViewCellEditingStyle, forRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 1 {
             if editingStyle == .Delete {

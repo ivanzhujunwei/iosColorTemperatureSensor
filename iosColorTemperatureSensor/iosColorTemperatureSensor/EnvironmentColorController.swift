@@ -11,6 +11,10 @@ protocol setColorForEnvironmentDelegate {
     func setColorDelegate(color:UIColor)
 }
 
+// This view is used to diplay the information of the selected environment which is the in-house
+// environment. Also, a weather API will be called to show the outside weather condition of
+// Melbourne (comparisons would be made). Users can also connect the colors picked by the color
+// sensor and the environment information picked by the environment sensor here
 class EnvironmentColorController: UITableViewController {
     
     var pickedColors:[UIColor]!
@@ -22,27 +26,21 @@ class EnvironmentColorController: UITableViewController {
     var currentTemp: String!
     var cityName:String!
     
+    // This function is called the first time this view is loaded. So the weather API would be
+    // used once the view is loaded
     override func viewDidLoad() {
         super.viewDidLoad()
         if pickedColors == nil {
             pickedColors = [UIColor]()
         }
-        //currentTemp = ""
-        //cityName = ""
-        
-            // Put your code which should be executed with a delay here
         self.getWeatherData()
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-        
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem()
     }
     
-    // Set current temperateure and location from weather API
+    // Set current temperateure and location from weather API and deploy the JSON content to
+    // store the content into the field variables.
     // reference: www.openweathermap.org/current
     func setCurrentTemperature(weatherData: NSData) {
-//        var jsonError: NSError?
+        //        var jsonError: NSError?
         do {
             let json = try NSJSONSerialization.JSONObjectWithData(weatherData, options: NSJSONReadingOptions.MutableContainers) as! NSDictionary
             if let name = json["name"] as? String {
@@ -59,7 +57,9 @@ class EnvironmentColorController: UITableViewController {
         }
     }
     
-    
+    // get the information about the outside information of Melbourne from the weather API in
+    // JSON format, and return the content to tthe setCurrentTemperature function to be further
+    // deployed.
     func getWeatherData() {
         let url = NSURL(string: "http://api.openweathermap.org/data/2.5/weather?q=Melbourne&APPID=a2d432705d96d247681bf14dcc613100")!
         let urlRequest = NSURLRequest(URL: url)
@@ -76,13 +76,13 @@ class EnvironmentColorController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: - Table view data source
-    
+    // set the number of sections for this table view
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
         return 4
     }
     
+    // set the number of rows for each section
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if section == 0 {
             return 1
@@ -96,7 +96,10 @@ class EnvironmentColorController: UITableViewController {
         }
     }
     
-    
+    // Define the outlook of the cells for this view. (The first section is to display the
+    // content of the in-house environment. The second section is to display the outside
+    // environment of melbourne. The third section is to display a notice message, and the last
+    // section is to display the available colours.
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         if indexPath.section == 0 {
             let cell = tableView.dequeueReusableCellWithIdentifier("viewEnvironmentId", forIndexPath: indexPath) as! WeatherTableViewCell
@@ -121,7 +124,7 @@ class EnvironmentColorController: UITableViewController {
             if pickedColors.count == 0{
                 cell.textLabel?.text = "You haven't picked any colors."
             }else {
-            cell.textLabel?.text = "Pick a color to mark the record."
+                cell.textLabel?.text = "Pick a color to mark the record."
             }
             return cell
         }else {
@@ -132,6 +135,7 @@ class EnvironmentColorController: UITableViewController {
         
     }
     
+    // Only the fouth section is able to be pressed
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {
         if indexPath.section == 4{
             return true
@@ -141,6 +145,7 @@ class EnvironmentColorController: UITableViewController {
         }
     }
     
+    // set the height of the first section to display a picture.
     override func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat {
         if indexPath.section == 0{
             return 180
@@ -148,6 +153,8 @@ class EnvironmentColorController: UITableViewController {
         return UITableViewAutomaticDimension
     }
     
+    // set the function to do when the rows of the last section is pressed (pass the information
+    // of the selected row, returning to the previous view).
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         if indexPath.section == 3 {
             // Get selected row index

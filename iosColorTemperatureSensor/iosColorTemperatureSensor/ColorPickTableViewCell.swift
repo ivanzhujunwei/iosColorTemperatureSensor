@@ -9,7 +9,7 @@
 import UIKit
 
 class ColorPickTableViewCell: UITableViewCell {
-
+    
     // color picker click button
     @IBOutlet var colorPicker: UIButton!
     
@@ -17,11 +17,11 @@ class ColorPickTableViewCell: UITableViewCell {
         super.awakeFromNib()
         // Initialization code
     }
-
+    
     override func setSelected(selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
-
+    
 }
