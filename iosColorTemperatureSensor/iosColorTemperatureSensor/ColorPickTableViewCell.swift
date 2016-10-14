@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// Custom cell: ColorPickTableView Cell
 class ColorPickTableViewCell: UITableViewCell {
     
     // color picker click button

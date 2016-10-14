@@ -34,10 +34,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="updateEnvironmnetId" id="htg-mm-ToU">
-                                <rect key="frame" x="0.0" y="119.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="htg-mm-ToU" id="g16-YJ-ZaR">
-                                    <frame key="frameInset" width="342" height="43.5"/>
+                                    <frame key="frameInset" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -45,10 +45,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="environmentId" rowHeight="103" id="xfd-hr-CpL" customClass="EnvironmentTableViewCell" customModule="iosColorTemperatureSensor" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="163.5" width="375" height="103"/>
+                                <rect key="frame" x="0.0" y="164" width="375" height="103"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="xfd-hr-CpL" id="gLn-wj-CJv">
-                                    <frame key="frameInset" width="342" height="102.5"/>
+                                    <frame key="frameInset" width="342" height="102"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Celsius" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GMK-74-YWb">
@@ -103,7 +103,7 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="viewEnvironmentId" textLabel="dgE-Wu-Hag" detailTextLabel="hzv-hW-gRd" rowHeight="159" style="IBUITableViewCellStyleSubtitle" id="myG-R0-LOm" customClass="WeatherTableViewCell" customModule="iosColorTemperatureSensor" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="119.5" width="375" height="159"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="159"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="myG-R0-LOm" id="8sj-AL-T2E">
                                     <frame key="frameInset" width="375" height="158.5"/>
@@ -134,26 +134,26 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="currentId" id="9ha-NR-CvT">
-                                <rect key="frame" x="0.0" y="278.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="279" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="9ha-NR-CvT" id="yB6-s1-yua">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="infoId" id="mzs-e5-eag">
-                                <rect key="frame" x="0.0" y="322.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="323" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="mzs-e5-eag" id="R6S-Vj-dt0">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="colorInfoId" id="ikC-6b-OVT">
-                                <rect key="frame" x="0.0" y="366.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="367" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ikC-6b-OVT" id="SqC-6J-kLX">
-                                    <frame key="frameInset" width="342" height="43.5"/>
+                                    <frame key="frameInset" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -194,13 +194,13 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="956-8O-HUI" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1934" y="-589"/>
+            <point key="canvasLocation" x="1892" y="-587"/>
         </scene>
         <!--Environmnet-->
         <scene sceneID="IWU-Tz-gg3">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Fzr-GC-Qn1" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Environmnet" id="GrI-gK-ELW" userLabel="Environment"/>
+                    <tabBarItem key="tabBarItem" title="Environmnet" image="bright-7" id="GrI-gK-ELW" userLabel="Environment"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="8Jc-dB-aPi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -219,7 +219,7 @@
         <scene sceneID="nfS-pJ-hkT">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="zYf-tJ-DLw" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Color" id="ctO-7I-sIT"/>
+                    <tabBarItem key="tabBarItem" title="Color" image="plant-element-7" id="ctO-7I-sIT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="mst-2r-a5O">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -244,10 +244,10 @@
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="colorSelectId" id="MPr-eT-Qw1">
-                                <rect key="frame" x="0.0" y="119.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="120" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="MPr-eT-Qw1" id="dHS-Zt-f4o">
-                                    <frame key="frameInset" width="342" height="43.5"/>
+                                    <frame key="frameInset" width="342" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <connections>
@@ -255,10 +255,10 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="colorDisplayId" id="XaX-6E-R0G">
-                                <rect key="frame" x="0.0" y="163.5" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="164" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="XaX-6E-R0G" id="6Bz-V0-zyL">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="43"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -278,7 +278,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mlh-zS-RlX" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1087" y="609"/>
+            <point key="canvasLocation" x="1052" y="609"/>
         </scene>
         <!--Update Color Controller-->
         <scene sceneID="Rm1-v1-LiX">
@@ -293,7 +293,7 @@
                                 <rect key="frame" x="0.0" y="92" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Al5-g0-dya" id="ayM-kg-YZI">
-                                    <frame key="frameInset" width="375" height="43.5"/>
+                                    <frame key="frameInset" width="375" height="44"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -306,7 +306,11 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A0I-oF-sdH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1934" y="609"/>
+            <point key="canvasLocation" x="1892" y="609"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="bright-7" width="29" height="30"/>
+        <image name="plant-element-7" width="30" height="30"/>
+    </resources>
 </document>

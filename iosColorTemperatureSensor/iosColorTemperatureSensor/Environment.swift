@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+// Environment entity, including temperate, pressure, altimeter and displayed color
 class Environment {
     var temperature:NSNumber!
     var pressure:NSNumber!

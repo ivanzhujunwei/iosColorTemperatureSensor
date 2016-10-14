@@ -13,13 +13,16 @@ import UIKit
 // records to be displayed is defined in another view after clicked the first section of this view)
 class EnvironmentController: UITableViewController, SelectNUpdateDelegate, setColorForEnvironmentDelegate{
     
+    // rows of environment data will be displayed
     var rowsOfEnvironment : Int!
+    // all displayed tableviewCells has one environment object which stored in the list
     var environmentlist : [Environment]!
     // the picked colors by user
     var pickedColors: [UIColor]!
     // why I can't initialise the value inside the viewDidLoad() method ??????
     var recordsInServer: Int!
     
+//    @IBOutlet var loadingSensorId: UIActivityIndicatorView!
     // Call the first time this view is loaded.
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +53,7 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate, setCo
         if section == 0{
             return 1;
         }else {
-            return rowsOfEnvironment
+                return self.rowsOfEnvironment
         }
     }
     
@@ -93,8 +96,8 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate, setCo
     // to receive the actual data. Eventually, the fetched data would be stored into the field
     // attribute of this view
     func readSensorData(){
-        let url = NSURL(string: "http://172.20.10.8:8088/")!
-        //        let url = NSURL(string: "http://192.168.1.18:8088/")!
+//        let url = NSURL(string: "http://172.20.10.8:8088/")!
+                let url = NSURL(string: "http://192.168.1.18:8088/")!
         let urlRequest = NSURLRequest(URL: url)
         let session = NSURLSession.sharedSession()
         let result = session.dataTaskWithRequest(urlRequest) {
@@ -104,6 +107,8 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate, setCo
                 // if no data is being received
                 if data == nil {
                     self.showAlertWithDismiss("Error", message: "Server connection error!")
+                    self.rowsOfEnvironment = 0
+                    self.tableView.reloadData()
                     return
                 }
                 // If there is only one group of data sent, which is not a NSArray, this would cause exception
@@ -129,6 +134,9 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate, setCo
                     self.environmentlist.append(en)
                     self.tableView.reloadData()
                 }
+//                self.loadingSensorId.hidden = true
+//                self.loadingSensorId.startAnimating()
+//                self.tableView.hidden = false
             } catch {
                 print("json error: \(error)")
             }
@@ -138,9 +146,11 @@ class EnvironmentController: UITableViewController, SelectNUpdateDelegate, setCo
     }
     
     // MARK: - Delegate
-    // The delegate used to receive the configuration of how many rows to show defined in another
-    // view.
+    // The delegate used to receive the configuration of how many rows to show defined in another view.
     func selectNUpdate(nUpdate: Int) {
+//        loadingSensorId.hidden = false
+//        loadingSensorId.startAnimating()
+        environmentlist.removeAll()
         rowsOfEnvironment = nUpdate
         readSensorData()
         self.tableView.reloadData()

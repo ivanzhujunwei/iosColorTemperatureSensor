@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// Custom cell: EnvironmentTableView Cell
 class EnvironmentTableViewCell: UITableViewCell {
     
     var environment: Environment!

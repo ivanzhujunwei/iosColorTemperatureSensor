@@ -13,7 +13,10 @@ import UIKit
 // records to be displayed is defined in another view after clicked the first section of this view)
 class ColorController: UITableViewController, SelectNUpdateColorDelegate {
     
+    // count how many colors displayed
     var displayedColorCount: Int!
+    
+    // picked colors
     var pickedColors: [UIColor]!
     //
     //    var control: Int = 0
@@ -21,12 +24,6 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
     // When the button is pressed, the data from the sensor would be retrieved.
     @IBAction func pickColor(sender: UIBarButtonItem) {
         displayedColorCount = displayedColorCount + 1
-        //
-        //        if (control == 0)
-        //        {
-        //            readColorSensorFirst()
-        //            control = 1
-        //        }
         readColorSensor()
         self.tableView.reloadData()
     }
@@ -96,8 +93,8 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
     // to receive the actual data. Eventually, the fetched data would be stored into the field
     // attribute of this view
     func readColorSensor(){
-        let url = NSURL(string: "http://172.20.10.8:8089/")!
-        //        let url = NSURL(string: "http://192.168.1.18:8089/")!
+                let url = NSURL(string: "http://192.168.1.18:8089/")!
+//        let url = NSURL(string: "http://172.20.10.8:8089/")!
         let urlRequest = NSURLRequest(URL: url)
         let session = NSURLSession.sharedSession()
         let result = session.dataTaskWithRequest(urlRequest) {

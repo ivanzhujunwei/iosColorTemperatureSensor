@@ -7,7 +7,7 @@
 //
 
 import UIKit
-
+// Custom cell: WeatherTableView Cell
 class WeatherTableViewCell: UITableViewCell {
 
     @IBOutlet var weatherImage: UIImageView!

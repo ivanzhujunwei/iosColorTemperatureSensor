@@ -14,7 +14,6 @@
 		607B73921DAB019D00169CBC /* NUpdatesEnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607B73911DAB019D00169CBC /* NUpdatesEnController.swift */; };
 		60A79F371DAE5E5700641E1F /* EnvironmentColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60A79F361DAE5E5700641E1F /* EnvironmentColorController.swift */; };
 		60B58D411DAA47E300FBA244 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58D401DAA47E300FBA244 /* AppDelegate.swift */; };
-		60B58D431DAA47E300FBA244 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60B58D421DAA47E300FBA244 /* ViewController.swift */; };
 		60B58D461DAA47E300FBA244 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60B58D441DAA47E300FBA244 /* Main.storyboard */; };
 		60B58D481DAA47E300FBA244 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 60B58D471DAA47E300FBA244 /* Assets.xcassets */; };
 		60B58D4B1DAA47E300FBA244 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 60B58D491DAA47E300FBA244 /* LaunchScreen.storyboard */; };
@@ -32,7 +31,6 @@
 		60A79F361DAE5E5700641E1F /* EnvironmentColorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EnvironmentColorController.swift; sourceTree = "<group>"; };
 		60B58D3D1DAA47E300FBA244 /* iosColorTemperatureSensor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iosColorTemperatureSensor.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		60B58D401DAA47E300FBA244 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		60B58D421DAA47E300FBA244 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		60B58D451DAA47E300FBA244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		60B58D471DAA47E300FBA244 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		60B58D4A1DAA47E300FBA244 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -106,7 +104,6 @@
 		60B58D621DAA93F300FBA244 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				60B58D421DAA47E300FBA244 /* ViewController.swift */,
 				60B58D561DAA712D00FBA244 /* EnvironmentController.swift */,
 				607B73911DAB019D00169CBC /* NUpdatesEnController.swift */,
 				600B5C681DAB38360006F467 /* ColorController.swift */,
@@ -192,7 +189,6 @@
 				600B5C6F1DAB44120006F467 /* NUpdateColorController.swift in Sources */,
 				60B58D601DAA93B500FBA244 /* EnvironmentTableViewCell.swift in Sources */,
 				600B5C691DAB38360006F467 /* ColorController.swift in Sources */,
-				60B58D431DAA47E300FBA244 /* ViewController.swift in Sources */,
 				603353DA1DAB74FA0016B142 /* ColorPickTableViewCell.swift in Sources */,
 				60B58D591DAA7D5200FBA244 /* Environment.swift in Sources */,
 				60B58D571DAA712D00FBA244 /* EnvironmentController.swift in Sources */,

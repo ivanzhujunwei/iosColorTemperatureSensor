@@ -114,9 +114,9 @@ class EnvironmentColorController: UITableViewController {
             return cell
         }else if indexPath.section == 1{
             let cell = tableView.dequeueReusableCellWithIdentifier("currentId", forIndexPath: indexPath)
-            let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 1 * Int64(NSEC_PER_SEC))
+            let time = dispatch_time(dispatch_time_t(DISPATCH_TIME_NOW), 2000 * Int64(NSEC_PER_MSEC))
             dispatch_after(time, dispatch_get_main_queue()) {
-                cell.textLabel!.text = "Outside temp:" + self.currentTemp + "°" + " Location: " + self.cityName
+                cell.textLabel!.text = "Outside temp:" + self.currentTemp + "°" + "  Location: " + self.cityName
             }
             return cell
         }else if indexPath.section == 2{
