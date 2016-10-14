@@ -121,10 +121,6 @@ class ColorController: UITableViewController, SelectNUpdateColorDelegate {
                 let red = sensorData["red"] as! Double
                 let blue = sensorData["blue"] as! Double
                 let c = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-                //                    print("展示多少条数据。。。"+"\(self.displayedColorCount)")
-                //                    print("red.."+"\(red)")
-                //                    print("green"+"\(green)")
-                //                    print("blue"+"\(blue)")
                 self.pickedColors.append(c)
                 self.tableView.reloadData()
             } catch {
