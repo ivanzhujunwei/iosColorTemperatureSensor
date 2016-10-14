@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		6006682B1DAF8FF800D72E8F /* WeatherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6006682A1DAF8FF800D72E8F /* WeatherTableViewCell.swift */; };
 		600B5C691DAB38360006F467 /* ColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600B5C681DAB38360006F467 /* ColorController.swift */; };
-		600B5C6B1DAB3AB80006F467 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600B5C6A1DAB3AB80006F467 /* Color.swift */; };
 		600B5C6F1DAB44120006F467 /* NUpdateColorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 600B5C6E1DAB44120006F467 /* NUpdateColorController.swift */; };
 		603353DA1DAB74FA0016B142 /* ColorPickTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603353D91DAB74FA0016B142 /* ColorPickTableViewCell.swift */; };
 		607B73921DAB019D00169CBC /* NUpdatesEnController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607B73911DAB019D00169CBC /* NUpdatesEnController.swift */; };
@@ -27,7 +26,6 @@
 /* Begin PBXFileReference section */
 		6006682A1DAF8FF800D72E8F /* WeatherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherTableViewCell.swift; sourceTree = "<group>"; };
 		600B5C681DAB38360006F467 /* ColorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorController.swift; sourceTree = "<group>"; };
-		600B5C6A1DAB3AB80006F467 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
 		600B5C6E1DAB44120006F467 /* NUpdateColorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUpdateColorController.swift; sourceTree = "<group>"; };
 		603353D91DAB74FA0016B142 /* ColorPickTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColorPickTableViewCell.swift; sourceTree = "<group>"; };
 		607B73911DAB019D00169CBC /* NUpdatesEnController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NUpdatesEnController.swift; sourceTree = "<group>"; };
@@ -101,7 +99,6 @@
 			isa = PBXGroup;
 			children = (
 				60B58D581DAA7D5200FBA244 /* Environment.swift */,
-				600B5C6A1DAB3AB80006F467 /* Color.swift */,
 			);
 			name = Entity;
 			sourceTree = "<group>";
@@ -199,7 +196,6 @@
 				603353DA1DAB74FA0016B142 /* ColorPickTableViewCell.swift in Sources */,
 				60B58D591DAA7D5200FBA244 /* Environment.swift in Sources */,
 				60B58D571DAA712D00FBA244 /* EnvironmentController.swift in Sources */,
-				600B5C6B1DAB3AB80006F467 /* Color.swift in Sources */,
 				607B73921DAB019D00169CBC /* NUpdatesEnController.swift in Sources */,
 				60A79F371DAE5E5700641E1F /* EnvironmentColorController.swift in Sources */,
 				60B58D411DAA47E300FBA244 /* AppDelegate.swift in Sources */,

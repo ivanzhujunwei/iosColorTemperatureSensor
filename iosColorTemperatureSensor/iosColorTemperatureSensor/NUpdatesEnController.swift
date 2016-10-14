@@ -1,5 +1,5 @@
 //
-//   #warning Incomplete implementation, return the number of sections         return 2 NUpdatesEnController.swift
+// NUpdatesEnController.swift
 //  iosSensors
 //
 //  Created by zjw on 10/10/16.
